@@ -11,18 +11,26 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+
+  "lint-staged": {
+      "src/**/*.{js,json}": [
+        "prettier --write"
+      ]
+    },
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+
+  "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+  
   "browserslist": {
     "production": [
       ">0.2%",
